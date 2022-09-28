@@ -7,8 +7,8 @@ body {
 }
 
 .container {
-    background: gray;
-    width: 100vw;
+    background: linear-gradient(-45deg,#044390,#29bbff);
+    width: 100%;
 }
 
 .navbar-resumido{
@@ -141,25 +141,25 @@ span#location-icon{
 
 .carrusel{
     display: block;
-    background: #25aef3;
 }
 
 .carrusel-480{
     display: none;
-    background: #25aef3;
 }
 
 .card-container{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background: #25aef3;
 }
 
 .card-container h2, .card-container h3{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    display: inline-block;
+    overflow-wrap: anywhere;
 }
 
 .card-container h2{
@@ -167,21 +167,29 @@ span#location-icon{
     align-items: center;
     justify-content: center;
     margin: 1.5rem 0;
+    min-height: 100px;
 }
 
 .card-container h3{
     margin-top: .5rem;
     margin-bottom: 2rem;
+    min-height: 120px;
 }
 
-.card-container div{
-    width: 100%;
+.card-container div.card{
+    max-width: 25%;
+    padding: 10px;
+    flex: 0 0 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0 0 25%;
-    padding: 10px;
+}
+
+.card-container div.card-img span{
+    font-variation-settings: 'wght' 400;
+    font-size: 80px;
+    color: #fff;
 }
 
 @media screen and (max-width: 1023px){
@@ -197,7 +205,8 @@ span#location-icon{
     .carrusel-480{
         display: block;
     }
-    .card-container div{
+    .card-container div.card{
+        max-width: inherit;
         flex: 0 0 50%;
     }
 }
