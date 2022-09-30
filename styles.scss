@@ -1,0 +1,229 @@
+@import "syles/colors.scss";
+@import "syles/fonts.scss";
+
+*,
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: $bg-gradiant;
+    width: 100%;
+}
+
+.navbar {
+    position: sticky;
+    top: -40px;
+    /*le puse -40px aca porque no me dejaba ponerle el sticky al navbar2*/
+    background: $navbar-bgcolor;
+    width: 100%;
+
+    li,
+    button {
+        background: none;
+        border: none;
+        color: $primary-font-color;
+        font-family: $primary-font;
+        font-weight: 800;
+        font-size: .750rem;
+        padding: 8px 15px;
+        margin: 0px 2px;
+        border-radius: 5px;
+        transition: .35s ease all;
+
+        &:hover {
+            background: $navbar-bgcolor-hover;
+            color: $navbar-color-hover;
+            cursor: pointer;
+        }
+    }
+
+    &1,
+    &2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            margin: 0px 20px;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &1 {
+        height: 40px;
+    }
+
+    &2 {
+        height: 70px;
+
+        li {
+            font-size: 1.2rem;
+            padding: 15px 15px;
+            margin: 0;
+        }
+    }
+
+    &-resumido {
+        display: none;
+        position: sticky;
+        top: 0;
+        align-items: center;
+        background: $navbar-bgcolor;
+
+        .logo,
+        .hamburger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            width: 58px;
+
+            span {
+                color: $primary-font-color;
+                font-size: 50px;
+                font-variation-settings: 'wght' 100 !important;
+            }
+        }
+
+        img {
+            min-height: 32px;
+            max-width: 132px;
+        }
+    }
+}
+
+#btn-personas {
+    background: $navbar-bgcolor-hover;
+    color: $navbar-color-hover;
+
+    &:hover {
+        background: #065A7F;
+    }
+}
+
+.btn-icon {
+    padding: 0px 10px !important;
+    display: flex;
+    align-items: center;
+
+    span {
+        &.navbar-icon {
+            font-size: 30px;
+            font-variation-settings: 'wght' 200, 'FILL' 0 !important;
+        }
+
+        &.icon-mr {
+            margin-right: 5px;
+        }
+    }
+}
+
+button.btn-domicilio {
+    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+}
+
+img.logo {
+    max-height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+span#location-icon {
+    font-size: 40px;
+    font-variation-settings: 'wght' 100 !important;
+}
+
+.carrusel {
+    display: block;
+
+    &-480 {
+        display: none;
+    }
+}
+
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h2,
+    h3 {
+        color: $primary-font-color;
+        font-family: $primary-font;
+        text-align: center;
+        display: inline-block;
+        overflow-wrap: anywhere;
+    }
+
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem 0;
+        min-height: 100px;
+    }
+
+    h3{
+        margin-top: .5rem;
+        margin-bottom: 2rem;
+        min-height: 120px;
+    }
+
+    div.card{
+        max-width: 25%;
+        padding: 10px;
+        flex: 0 0 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-img{
+            span{
+                font-variation-settings: 'wght' 400;
+                font-size: 80px;
+                color: $primary-font-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+
+    .navbar {
+        display: none;
+
+        &-resumido{
+            display: flex;
+        }
+    }
+
+    .carrusel {
+        display: none;
+
+        &-480{
+            display: block;
+        }
+    }
+
+    .card-container {
+        div.card{
+            max-width: inherit;
+            flex: 0 0 50%;
+        }
+    }
+}
